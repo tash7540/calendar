@@ -13,6 +13,8 @@ const CalenderHeader=({time,setTime})=> {
         <FormControl  className={classes.form}>
           <Select
             id="select-year"
+            className={classes.select}
+
             label="Year"
             onChange={(e) => setTime({...time,year: e.target.value})}
             defaultValue={time.year}
@@ -26,6 +28,7 @@ const CalenderHeader=({time,setTime})=> {
         <FormControl className={classes.form}>
           <Select
             id="select-month"
+            className={classes.select}
             label="Month"
             onChange={(e)=> setTime({...time,month: parseInt(e.target.value-1)})}
             defaultValue={time.month +1}

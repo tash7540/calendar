@@ -1,6 +1,7 @@
 import './App.css';
 import CalendarHeader from './components/header/header';
 import Calendar from './components/calendar/calendar';
+import Events from './components/events/events';
 import {useState} from 'react';
 import {Grid,Container} from '@material-ui/core';
 
@@ -13,9 +14,10 @@ function App() {
     <Container maxWidth="xlg">
       <Grid className ="calendar" container lg = {12} md = {12}>
 
-      <CalendarHeader time ={time} setTime={setTime}/>
-      <Calendar time ={time}/>
-    </Grid>
+        <CalendarHeader time ={time} setTime={setTime}/>
+        <Calendar time ={time}/>
+        <Events/>
+      </Grid>
     </Container>
   );
 }
