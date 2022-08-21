@@ -1,19 +1,21 @@
 import { FormControl,InputLabel,Select,MenuItem} from '@material-ui/core';
 import { useState } from 'react';
+import { AppBar,Container,Grid} from '@material-ui/core';
+import { yearOptions, monthOptions } from '../../constants/index';
+import useStyles from './styles';
 
-import { yearOptions, monthOptions } from '../constants/index';
 
+const CalenderHeader=({time,setTime})=> {
+    const classes = useStyles();
 
-const CalenderHeader=({onSetYear,onSetMonth})=> {
-    
     return (
-      <>
-        <FormControl>
-          <InputLabel>Year</InputLabel>
+      <Container className={classes.container}>
+        <FormControl  className={classes.form}>
           <Select
             id="select-year"
             label="Year"
-            onChange={(e) => onSetYear(e.target.value)}
+            onChange={(e) => setTime({...time,year: e.target.value})}
+            defaultValue={time.year}
           > 
             {yearOptions.map((data) => (
               <MenuItem value = {data}>{data}</MenuItem>
@@ -21,20 +23,20 @@ const CalenderHeader=({onSetYear,onSetMonth})=> {
           </Select>
 
         </FormControl>
-        <FormControl>
-
-          <InputLabel >Month</InputLabel>
+        <FormControl className={classes.form}>
           <Select
             id="select-month"
             label="Month"
-            onChange={(e) =>  onSetMonth(e.target.value)}
+            onChange={(e)=> setTime({...time,month: parseInt(e.target.value-1)})}
+            defaultValue={time.month +1}
+
           > 
             {monthOptions.map((data) => (
               <MenuItem value = {data}>{data}</MenuItem>
             ))}
           </Select>
           </FormControl>
-        </>
+        </Container>
     );
   }
   

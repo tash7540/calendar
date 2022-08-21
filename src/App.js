@@ -1,32 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import CalendarHeader from './components/header.js';
-import {useState,useEffect} from 'react';
-import moment from 'moment';
+import CalendarHeader from './components/header/header';
+import Calendar from './components/calendar/calendar';
+import {useState} from 'react';
+import {Grid,Container} from '@material-ui/core';
+
 
 function App() {
-  const [month,setMonth] = useState(1);
-  const [year,setYear] = useState(2022);
-  const startOfDay = moment().year(year).month(month).startOf("month").format('ddd');
-  const monthSize = parseInt(moment().year(year).month(month).endOf("month").format('DD'));
-  console.log(month);
-  console.log(startOfDay);
-  console.log(monthSize);
-  const onSetYear=(value)=>{
-    setYear(value)
-  }
-  const onSetMonth=(value)=>{
-    setMonth(value)
-  }
 
-
+  const [time,setTime] = useState({year:2022,month:0});
 
   return (
-    <div className="App">
-      <CalendarHeader onSetYear = {onSetYear} onSetMonth = {onSetMonth}/>
-      
+    <Container maxWidth="xlg">
+      <Grid className ="calendar" container lg = {12} md = {12}>
 
-    </div>
+      <CalendarHeader time ={time} setTime={setTime}/>
+      <Calendar time ={time}/>
+    </Grid>
+    </Container>
   );
 }
 

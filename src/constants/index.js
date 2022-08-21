@@ -1,13 +1,13 @@
 import _ from 'lodash';
 
 export const weekArray = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat'
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
   ];
 
 export const gridArray = _.range(0, 42);
