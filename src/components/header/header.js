@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { AppBar,Container,Grid} from '@material-ui/core';
 import { yearOptions, monthOptions } from '../../constants/index';
 import useStyles from './styles';
-
+import DialogComponent from '../dialog/dialog';
 
 const CalenderHeader=({time,setTime})=> {
     const classes = useStyles();
@@ -39,7 +39,7 @@ const CalenderHeader=({time,setTime})=> {
             ))}
           </Select>
           </FormControl>
-        </Container>
+      </Container>
     );
   }
   
