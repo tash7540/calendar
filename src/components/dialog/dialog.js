@@ -15,20 +15,17 @@ const DialogComponent = ()=>{
         clear();
 
     }
-
-    const clear = () => {
-        setEvent({event:'',details:'',time:''});
-    };
-
     const handleSubmit = (e) =>{
         e.preventDefault();
         setOpen(false);
 
         console.log(event);
 
-
         clear();
     }
+    const clear = () => {
+        setEvent({event:'',details:'',time:''});
+    };
 
     return(
         <>
