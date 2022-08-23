@@ -1,13 +1,17 @@
 import { Button,Dialog,DialogTitle,DialogContent,DialogContentText,TextField,DialogActions} from '@material-ui/core';
 import { useState } from 'react';
-import { AppBar,Container,Grid} from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
 import { yearOptions, monthOptions } from '../../constants/index';
 import useStyles from './styles';
+import { createEvent} from '../../actions/events';
 
 
 const DialogComponent = ()=>{
     const classes = useStyles();
-    const [event,setEvent] = useState({event:'',details:'',time:''});
+    const dispatch = useDispatch();
+
+
+    const [event,setEvent] = useState({eventName:'', eventTime:'', eventNote:''});
     const [open, setOpen] = useState(false);
     const handleClickOpen = () => setOpen(true);
     const handleClose = () => {
@@ -18,7 +22,7 @@ const DialogComponent = ()=>{
     const handleSubmit = (e) =>{
         e.preventDefault();
         setOpen(false);
-
+        dispatch(createEvent(event));
         console.log(event);
 
         clear();
@@ -36,13 +40,13 @@ const DialogComponent = ()=>{
             <DialogTitle>Add Event</DialogTitle>
             <DialogContent>
                 <TextField autoFocus margin="dense" id="event" label="Event Name" type="text" fullWidth variant="standard" 
-                value={event.event} onChange={(e) => setEvent({ ...event, event: e.target.value })}  />
+                value={event.eventName} onChange={(e) => setEvent({ ...event, eventName: e.target.value })}  />
 
                 <TextField autoFocus margin="dense" id="detail" label="Event Details" type="text" fullWidth variant="standard" 
-                value={event.details} onChange={(e) => setEvent({ ...event, details: e.target.value })}  />
+                value={event.eventNote} onChange={(e) => setEvent({ ...event, eventNote: e.target.value })}  />
                 <TextField autoFocus margin="dense" id="date" label="Time" type="date" fullWidth variant="standard"
-                InputLabelProps={{shrink: true,}} value={event.time} 
-                onChange={(e) => setEvent({ ...event, time: e.target.value })} />
+                InputLabelProps={{shrink: true,}} value={event.eventTime} 
+                onChange={(e) => setEvent({ ...event, eventTime: e.target.value })} />
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>

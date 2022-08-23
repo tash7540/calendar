@@ -29,7 +29,7 @@ const Calendar= ({time}) =>{
           <Box >{i - startIndex + 1 }</Box>
         </Grid>:
         <Grid className ={classes.weekDayContainer} item>
-          <Box >T</Box>
+          <Box ></Box>
         </Grid>
       )}
     </Grid>

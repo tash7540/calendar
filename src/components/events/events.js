@@ -7,7 +7,7 @@ import {Grid,Box,Card,Container} from '@material-ui/core';
 const Events=()=>{
     return(
         <Grid container lg ={2} md = {4}>
-            <Container>T</Container>
+            <Container></Container>
         </Grid>
     );
 }
