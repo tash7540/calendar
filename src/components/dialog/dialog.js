@@ -32,7 +32,7 @@ const DialogComponent = ()=>{
     };
 
     return(
-        <>
+        <div>
             <Button className = {classes.button}variant="outlined" onClick={handleClickOpen}>
             Open form dialog
             </Button>
@@ -53,7 +53,7 @@ const DialogComponent = ()=>{
                 <Button onClick={handleSubmit}>Add Event</Button>
             </DialogActions>
             </Dialog>
-        </>
+        </div>
     );
 };
 export default DialogComponent;

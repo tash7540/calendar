@@ -10,7 +10,7 @@ export default makeStyles((theme) => ({
   form:{
     alignItems: 'center',
     padding:'5px',
-    border:'solid gray',
+    border: '1px solid gray',
     width:'120px',
     marginRight:'5px',
   },

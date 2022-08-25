@@ -14,13 +14,18 @@ function App() {
   const [time,setTime] = useState({year:2022,month:0});
   const events = useSelector((state) => state.events);
   return (
-    <Container maxWidth="xl">
-      <Grid className ="calendar" container lg = {12} md = {12}>
-        <CalendarHeader time ={time} setTime={setTime}/>
-        <DialogComponent/>
-          {console.log(events)}
-        <Calendar time ={time}/>
-        <Events/>
+    <Container maxWidth="lg">
+      <Grid container>
+        <Grid lg={9} md = {8}>
+          <CalendarHeader time ={time} setTime={setTime}/>
+            {console.log(events)}
+          <Calendar time ={time}/>
+        </Grid>
+        <Grid lg = {3}>
+          <DialogComponent/>
+
+          <Events events = {events}/>
+        </Grid>
       </Grid>
     </Container>
   );
