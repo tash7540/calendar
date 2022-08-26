@@ -1,7 +1,6 @@
-import { Button,Dialog,DialogTitle,DialogContent,DialogContentText,TextField,DialogActions} from '@material-ui/core';
+import { Button,Dialog,DialogTitle,DialogContent,TextField,DialogActions} from '@material-ui/core';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { yearOptions, monthOptions } from '../../constants/index';
+import { useDispatch} from 'react-redux';
 import useStyles from './styles';
 import { createEvent} from '../../actions/events';
 

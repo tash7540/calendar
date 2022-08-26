@@ -14,7 +14,7 @@ const Events=()=>{
             <Container className ={classes.events} >
                 { events.map((data)=>(
                     <Grid  container lg ={12} md = {4}>
-                        <Event key={data.eventId} data= {data}/>
+                        <Event key={data.eventId} data= {data} events = {events}/>
                     </Grid>
                 ))}
             </Container>

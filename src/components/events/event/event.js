@@ -6,6 +6,7 @@ import useStyles from './styles';
 
 const Event=({data})=>{
     const classes = useStyles();
+
     return(
         <Card className = {classes.card}>
             <div style={{padding:'12px'}}>

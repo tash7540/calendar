@@ -1,9 +1,9 @@
-import {useState,useEffect} from 'react';
 import moment from 'moment';
-import {yearOptions, monthOptions,weekArray,gridArray } from '../../constants/index';
-import {Grid,Box,Card,Container} from '@material-ui/core';
+import {weekArray,gridArray } from '../../constants/index';
+import {Grid,Box} from '@material-ui/core';
 import useStyles from './styles';
-
+import Day from './day/day';
+import { useSelector } from 'react-redux';
 
 const Calendar= ({time}) =>{
   const classes = useStyles();
@@ -13,6 +13,7 @@ const Calendar= ({time}) =>{
   const monthSize = parseInt(moment().year(time.year).month(time.month).endOf("month").format('DD'));
   const startIndex = weekArray.indexOf(startOfDay)
   const endIndex = startIndex + monthSize;
+  const events = useSelector((state) => state.events);
 
   console.log(startIndex);
   console.log(endIndex);
@@ -26,7 +27,7 @@ const Calendar= ({time}) =>{
       {gridArray.map( (data, i) => 
         i >= startIndex && i < endIndex ?
         <Grid className = {classes.weekDayContainer} item >
-          <Box >{i - startIndex + 1 }</Box>
+          <Day year={time.year} month = {time.month} day = {i - startIndex + 1} events = {events}/>
         </Grid>:
         <Grid className ={classes.weekDayContainer} item>
           <Box ></Box>

@@ -19,7 +19,7 @@ function App() {
         <Grid lg={9} md = {8}>
           <CalendarHeader time ={time} setTime={setTime}/>
             {console.log(events)}
-          <Calendar time ={time}/>
+          <Calendar time ={time} />
         </Grid>
         <Grid lg = {3}>
           <DialogComponent/>
