@@ -31,3 +31,13 @@ export const deleteEvent = (id) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const updateEvent = (id,event) => async (dispatch) => {
+  try {
+    await api.updateEvent(id,event);
+
+    dispatch({ type: 'UPDATE', payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
