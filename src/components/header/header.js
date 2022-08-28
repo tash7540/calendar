@@ -1,11 +1,10 @@
-import { FormControl,InputLabel,Select,MenuItem} from '@material-ui/core';
-import { useState } from 'react';
-import { AppBar,Container,Grid} from '@material-ui/core';
+import { FormControl,Select,MenuItem} from '@material-ui/core';
+import { AppBar,Container} from '@material-ui/core';
 import { yearOptions, monthOptions } from '../../constants/index';
 import useStyles from './styles';
 import DialogComponent from '../dialog/dialog';
 
-const CalenderHeader=({time,setTime})=> {
+const CalenderHeader=({time,setTime,currentId,setCurrentId})=> {
     const classes = useStyles();
 
     return (
@@ -40,7 +39,7 @@ const CalenderHeader=({time,setTime})=> {
           </Select>
           </FormControl>
         <div style ={{justifyContent:'flex-end'}}>
-          <DialogComponent/>
+          <DialogComponent currentId={currentId} setCurrentId={setCurrentId}/>
         </div>
 
       </Container>

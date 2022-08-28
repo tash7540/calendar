@@ -1,32 +1,49 @@
 import { Button,Dialog,DialogTitle,DialogContent,TextField,DialogActions} from '@material-ui/core';
-import { useState } from 'react';
-import { useDispatch} from 'react-redux';
+import { useState,useEffect} from 'react';
+import { useDispatch ,useSelector} from 'react-redux';
 import useStyles from './styles';
 import { createEvent} from '../../actions/events';
+import { updateEvent } from '../../actions/events';
 
-
-const DialogComponent = ()=>{
+const DialogComponent = ({currentId,setCurrentId})=>{
     const classes = useStyles();
     const dispatch = useDispatch();
-
-
+    const updatedEvent = useSelector((state) => (currentId ? state.events.find((e) => e.eventId === currentId) : null ));
     const [event,setEvent] = useState({eventName:'', eventTime:'', eventNote:''});
     const [open, setOpen] = useState(false);
+
+
     const handleClickOpen = () => setOpen(true);
+
     const handleClose = () => {
         setOpen(false);
         clear();
 
     }
+
+    useEffect(() =>{
+        if(currentId) setOpen(true);
+        
+        if(updatedEvent) setEvent(updatedEvent);
+      } ,[updatedEvent]);
+
     const handleSubmit = (e) =>{
         e.preventDefault();
         setOpen(false);
-        dispatch(createEvent(event));
+        if(currentId){
+            dispatch(updateEvent(currentId,event))
+        }
+        else{
+            dispatch(createEvent(event));
+
+        }
         console.log(event);
 
         clear();
     }
     const clear = () => {
+        setCurrentId(0);
+
         setEvent({event:'',details:'',time:''});
     };
 

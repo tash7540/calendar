@@ -3,7 +3,7 @@ import useStyles from './styles';
 import Event from './event/event';
 import {useSelector } from 'react-redux';
 
-const Events=()=>{
+const Events=({setCurrentId})=>{
     const events = useSelector((state) => state.events);
     const classes = useStyles();
 
@@ -12,7 +12,7 @@ const Events=()=>{
             <Container className ={classes.events} >
                 { events.map((event)=>(
                     <Grid  container lg ={12} md = {4}>
-                        <Event key={event.eventId} event= {event} />
+                        <Event key={event.eventId} event= {event} setCurrentId={setCurrentId} />
                     </Grid>
                 ))}
             </Container>

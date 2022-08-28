@@ -1,9 +1,9 @@
 import {deleteEvent} from '../../../actions/events';
 import { useDispatch } from 'react-redux';
-import {Grid,Box,Card,Container,Button,CardActions, CircularProgress,Typography} from '@material-ui/core';
+import {Card,Button,CardActions, CircularProgress,Typography} from '@material-ui/core';
 import useStyles from './styles';
 
-const Event=({event})=>{
+const Event=({event,setCurrentId})=>{
     const classes = useStyles();
     const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ const Event=({event})=>{
             <Typography fullWidth>Notes: {event.eventNote}</Typography>
             </div>
             <CardActions >
-            <Button size="small" color="primary">Edit  </Button>
+            <Button size="small" color="primary" onClick={() =>setCurrentId(event.eventId)}>Edit  </Button>
             <Button size="small" color="primary" onClick={() => dispatch(deleteEvent(event.eventId))}>Delete</Button>
             </CardActions>
         </Card>
