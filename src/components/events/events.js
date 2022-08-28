@@ -1,14 +1,12 @@
-import {useState,useEffect} from 'react';
-import moment from 'moment';
-import {yearOptions, monthOptions,weekArray,gridArray } from '../../constants/index';
-import {Grid,Box,Card,Container, CircularProgress} from '@material-ui/core';
+import {Grid,Container, CircularProgress} from '@material-ui/core';
 import useStyles from './styles';
 import Event from './event/event';
-import { useDispatch, useSelector } from 'react-redux';
+import {useSelector } from 'react-redux';
 
 const Events=()=>{
     const events = useSelector((state) => state.events);
     const classes = useStyles();
+
     return(
         !events.length ? <CircularProgress/> : (
             <Container className ={classes.events} >

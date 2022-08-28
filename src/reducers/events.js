@@ -9,7 +9,7 @@ export default (events = [], action) => {
             return [...events, action.payload];
 
         case 'DELETE':
-            return(events.filter((event) => event._id !== action.payload));
+            return(events.filter((event) => event.eventId !== action.payload));
 
   
         default:

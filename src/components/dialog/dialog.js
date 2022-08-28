@@ -32,7 +32,7 @@ const DialogComponent = ()=>{
 
     return(
         <div>
-            <Button className = {classes.button}variant="outlined" onClick={handleClickOpen}>
+            <Button className = {classes.button} variant="outlined" onClick={handleClickOpen}>
             Open form dialog
             </Button>
             <Dialog open={open} onClose={handleClose}>

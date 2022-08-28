@@ -3,9 +3,10 @@ import { useDispatch } from 'react-redux';
 import {Grid,Box,Card,Container,Button,CardActions, CircularProgress,Typography} from '@material-ui/core';
 import useStyles from './styles';
 
-const Event=({data: event})=>{
+const Event=({event})=>{
     const classes = useStyles();
     const dispatch = useDispatch();
+
 
     return(
         <Card className = {classes.card}>
@@ -16,7 +17,7 @@ const Event=({data: event})=>{
             </div>
             <CardActions >
             <Button size="small" color="primary">Edit  </Button>
-            <Button size="small" color="primary" onClick={ dispatch(deleteEvent(event._id))}>Delete</Button>
+            <Button size="small" color="primary" onClick={() => dispatch(deleteEvent(event.eventId))}>Delete</Button>
             </CardActions>
         </Card>
 
