@@ -10,8 +10,8 @@ weekDayContainer:{
     padding:'6px',
     border: '1px solid gray',
     textAlign: 'center',
-    height: '70px',
-    width:'110px',
+    height: '90px',
+    width:'142px',
     },
 
 }));

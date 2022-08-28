@@ -39,6 +39,10 @@ const CalenderHeader=({time,setTime})=> {
             ))}
           </Select>
           </FormControl>
+        <div style ={{justifyContent:'flex-end'}}>
+          <DialogComponent/>
+        </div>
+
       </Container>
     );
   }

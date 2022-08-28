@@ -18,7 +18,7 @@ const Calendar= ({time}) =>{
   console.log(startIndex);
   console.log(endIndex);
   return(
-    <Grid container lg = {10} md ={8} className = {classes.weekContainer}>
+    <Grid container className = {classes.weekContainer}>
       {weekArray.map((data,i) =>
         <Grid className = {classes.weekDayContainer} item >
           <Box >{data}</Box>

@@ -21,3 +21,13 @@ export const createEvent = (event) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const deleteEvent = (id) => async (dispatch) => {
+  try {
+    await api.deleteEvent(id);
+
+    dispatch({ type: 'DELETE', payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
