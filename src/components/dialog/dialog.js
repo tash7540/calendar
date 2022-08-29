@@ -57,8 +57,8 @@ const DialogComponent = ({currentId,setCurrentId})=>{
             <DialogContent>
                 <TextField autoFocus margin="dense" id="event" label="Event Name" type="text" fullWidth variant="standard" 
                 value={event.eventName} onChange={(e) => setEvent({ ...event, eventName: e.target.value })}  />
-                <TextField autoFocus margin="dense" id="time" label="Event Time" type="text" fullWidth variant="standard" 
-                value={event.eventTime} onChange={(e) => setEvent({ ...event, eventTime: e.target.value })}  />
+                <TextField autoFocus margin="dense" id="time" label="Event Time" type="time" fullWidth variant="standard" 
+                InputLabelProps={{shrink: true,}}  value={event.eventTime} onChange={(e) => setEvent({ ...event, eventTime: e.target.value })}  />
                 <TextField autoFocus margin="dense" id="detail" label="Event Details" type="text" fullWidth variant="standard" 
                 value={event.eventNote} onChange={(e) => setEvent({ ...event, eventNote: e.target.value })}  />
                 <TextField autoFocus margin="dense" id="date" label="date" type="date" fullWidth variant="standard"
