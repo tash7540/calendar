@@ -9,7 +9,7 @@ const DialogComponent = ({currentId,setCurrentId})=>{
     const classes = useStyles();
     const dispatch = useDispatch();
     const updatedEvent = useSelector((state) => (currentId ? state.events.find((e) => e.eventId === currentId) : null ));
-    const [event,setEvent] = useState({eventName:'', eventTime:'', eventNote:''});
+    const [event,setEvent] = useState({eventName:'', eventTime:'',eventDate:'', eventNote:''});
     const [open, setOpen] = useState(false);
 
 
@@ -57,12 +57,13 @@ const DialogComponent = ({currentId,setCurrentId})=>{
             <DialogContent>
                 <TextField autoFocus margin="dense" id="event" label="Event Name" type="text" fullWidth variant="standard" 
                 value={event.eventName} onChange={(e) => setEvent({ ...event, eventName: e.target.value })}  />
-
+                <TextField autoFocus margin="dense" id="time" label="Event Time" type="text" fullWidth variant="standard" 
+                value={event.eventTime} onChange={(e) => setEvent({ ...event, eventTime: e.target.value })}  />
                 <TextField autoFocus margin="dense" id="detail" label="Event Details" type="text" fullWidth variant="standard" 
                 value={event.eventNote} onChange={(e) => setEvent({ ...event, eventNote: e.target.value })}  />
-                <TextField autoFocus margin="dense" id="date" label="Time" type="date" fullWidth variant="standard"
-                InputLabelProps={{shrink: true,}} value={event.eventTime} 
-                onChange={(e) => setEvent({ ...event, eventTime: e.target.value })} />
+                <TextField autoFocus margin="dense" id="date" label="date" type="date" fullWidth variant="standard"
+                InputLabelProps={{shrink: true,}} value={event.eventDate} 
+                onChange={(e) => setEvent({ ...event, eventDate: e.target.value })} />
             </DialogContent>
             <DialogActions>
                 <Button onClick={handleClose}>Cancel</Button>

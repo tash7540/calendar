@@ -21,8 +21,7 @@ function App() {
   return (
     <Container maxWidth="lg">
       <AppBar className="appBar" position="static" color="inherit">
-        <h1 className="heading" >My Scheduler</h1>
-        <img className="image" src={icon} alt="icon" height="60" />
+        <Typography variant="h3" align="center" className="heading" >My Scheduler</Typography>
       </AppBar>
       <Grid container >
       <CalendarHeader time ={time} setTime={setTime} currentId={currentId} setCurrentId={setCurrentId}/>
