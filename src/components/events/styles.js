@@ -5,7 +5,7 @@ export default makeStyles({
   events:{
     display: 'flex',
     flexDirection: 'column',
-    marginTop:'30px',
+    marginTop:'20px',
     border: '1px solid gray',
 
   },

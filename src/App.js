@@ -2,10 +2,12 @@ import './App.css';
 import CalendarHeader from './components/header/header';
 import Calendar from './components/calendar/calendar';
 import Events from './components/events/events';
-import {Grid,Container} from '@material-ui/core';
+import {Grid,Container,AppBar,Typography} from '@material-ui/core';
 import { useState,useEffect} from 'react';
 import { useDispatch} from 'react-redux';
 import { getEvents} from './actions/events';
+//import icon from './images/note-img.png';
+import icon from './images/note-icon.jpg';
 
 function App() {
   const [time,setTime] = useState({year:2022,month:0});
@@ -17,7 +19,11 @@ function App() {
   }, [currentId, dispatch]);
 
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="lg">
+      <AppBar className="appBar" position="static" color="inherit">
+        <h1 className="heading" >My Scheduler</h1>
+        <img className="image" src={icon} alt="icon" height="60" />
+      </AppBar>
       <Grid container >
       <CalendarHeader time ={time} setTime={setTime} currentId={currentId} setCurrentId={setCurrentId}/>
         <Grid lg={9} md = {8}>

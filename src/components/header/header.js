@@ -9,7 +9,7 @@ const CalenderHeader=({time,setTime,currentId,setCurrentId})=> {
 
     return (
       <Container className={classes.container}>
-        <FormControl  className={classes.form}>
+        <FormControl variant="outlined" className={classes.form}>
           <Select
             id="select-year"
             className={classes.select}
@@ -24,7 +24,7 @@ const CalenderHeader=({time,setTime,currentId,setCurrentId})=> {
           </Select>
 
         </FormControl>
-        <FormControl className={classes.form}>
+        <FormControl variant="outlined" className={classes.form}>
           <Select
             id="select-month"
             className={classes.select}
@@ -38,7 +38,7 @@ const CalenderHeader=({time,setTime,currentId,setCurrentId})=> {
             ))}
           </Select>
           </FormControl>
-        <div style ={{justifyContent:'flex-end'}}>
+        <div >
           <DialogComponent currentId={currentId} setCurrentId={setCurrentId}/>
         </div>
 

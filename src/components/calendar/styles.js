@@ -11,7 +11,7 @@ weekDayContainer:{
     border: '1px solid gray',
     textAlign: 'center',
     height: '90px',
-    width:'142px',
+    width:'120px',
     },
 
 }));
